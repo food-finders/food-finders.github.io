@@ -25,13 +25,13 @@ h2 {
 }
 
 body {
-  background-color: #DDEEC5;
+  background-color: #FBEBA5;
 }
 
 header {
     width: calc(100vw - 250px);
     margin-left: 180px;
-    background: #DDEEC5;
+    background: #FBEBA5;
 
 }
 
@@ -56,24 +56,23 @@ header #search {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-
 }
 
 .restaurant {
   border-width: 1px;
   border-color: black;
   border-style: solid;
-  border-radius: 50px;
+  border-radius: 30px;
 
   width: 200px;
 
   padding-top: 10px;
-  padding-left: 20px;
+  padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 20px;
   margin: 10px;
 
-  background-color: #F6FFE6;
+  background-color: #FFF8DB;
 }
 
 .results h3 {
@@ -92,5 +91,5 @@ header #search {
   background-repeat: no-repeat;
   background-size: cover;
 
-  border-radius: 25px;
+  border-radius: 20px;
 }
