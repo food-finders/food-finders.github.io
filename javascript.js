@@ -47,7 +47,7 @@ const getFood = (term) => {
             <b>${restaurant.name}!</b><br>
             ${restaurant.display_address}
         `).openPopup();
-        let addition = `<section class="results">
+        let addition = `<section id="restaurant_${i}" class="results">
                           <h3>${restaurant.name}</h3>
                           <h3>${restaurant.display_address}</h3>
                           <h3>Rating: ${restaurant.rating}</h3>
