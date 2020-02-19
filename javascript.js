@@ -35,7 +35,8 @@ const getFood = (term) => {
 
     // add markers:
     let i = 0;
-    let html = "<h3>Results:<h3>";
+    /*let html = "<h3>Results:</h3>";*/
+    let html = "";
 
     if (myJson.length == 0) {
       html = html + `<p>No Food or Locations found.</p>`;
@@ -47,12 +48,14 @@ const getFood = (term) => {
             <b>${restaurant.name}!</b><br>
             ${restaurant.display_address}
         `).openPopup();
-        let addition = `<section id="restaurant_${i}" class="results">
+        let addition = `<section id="restaurant_${i}" class="restaurant">
                           <h3>${restaurant.name}</h3>
                           <h4>${restaurant.display_address}</h4>
                           <h5>Rating: ${restaurant.rating}</h5>
                           <h5>Price: ${restaurant.price}</h5>
-                          <img src="${restaurant.image_url}">
+                          <!--img src="${restaurant.image_url}" -->
+                          <div class="pic" style="background-image: url('${restaurant.image_url}');">
+</div>
                         </section>`;
         html = html + addition;
         i = i + 1;
