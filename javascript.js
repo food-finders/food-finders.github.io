@@ -30,31 +30,29 @@ const getFood = (term) => {
         }).addTo(mymap);
 
     // add markers:
-    for (restaurant of myJson) {
+    let i = 0;
+    let html = "<h2>Results</h2>";
+    if (myJson.length == 0) {
+      html = html + `<p>No Food or Places found.</p>`;
+    }
+    while (i < 10 && i < myJson.length) {
+        let restaurant = myJson[i];
         const marker = L.marker([restaurant.coordinates.latitude, restaurant.coordinates.longitude]).addTo(mymap);
         marker.bindPopup(`
             <b>${restaurant.name}!</b><br>
             ${restaurant.display_address}
         `).openPopup();
-    }
-      // let i = 0;
-      // let html = ""
-      // if (myJson.length == 0) {
-      //   html = `<p>No Food or Places found.</p>`;
-      // }
-      // while (i < 10 && i < myJson.length){
-      //   let restaurant = myJson[i];
-      //   let addition = `<section class="results">
-      //                     <h2>${restaurant.name}</h2>
-      //                     <h2>${restaurant.display_address}</h2>
-      //                     <h3>Rating: ${restaurant.rating}</h3>
-      //                     <h3>Price: ${restaurant.price}</h3>
-      //                     <img src="${restaurant.image_url}">
-      //                   </section>`
-      //   html = html + addition;
-      //   i = i + 1;
-      // }
-      // document.getElementById("search_results").innerHTML = html;
+        let addition = `<section class="results">
+                          <h2>${restaurant.name}</h2>
+                          <h3>${restaurant.display_address}</h3>
+                          <h3>Rating: ${restaurant.rating}</h3>
+                          <h3>Price: ${restaurant.price}</h3>
+                          <img src="${restaurant.image_url}">
+                        </section>`;
+        html = html + addition;
+        i = i + 1;
+      }
+      document.getElementById("restaurants").innerHTML = html;
     });
 };
 
