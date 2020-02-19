@@ -49,9 +49,9 @@ const getFood = (term) => {
         `).openPopup();
         let addition = `<section id="restaurant_${i}" class="results">
                           <h3>${restaurant.name}</h3>
-                          <h3>${restaurant.display_address}</h3>
-                          <h3>Rating: ${restaurant.rating}</h3>
-                          <h3>Price: ${restaurant.price}</h3>
+                          <h4>${restaurant.display_address}</h4>
+                          <h5>Rating: ${restaurant.rating}</h5>
+                          <h5>Price: ${restaurant.price}</h5>
                           <img src="${restaurant.image_url}">
                         </section>`;
         html = html + addition;
