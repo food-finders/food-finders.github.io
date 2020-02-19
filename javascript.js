@@ -21,7 +21,11 @@ const getFood = (term) => {
         myJson[0].coordinates.longitude
     ];
     // initialize map:
-    const mymap = L.map('mapid').setView(center, 11);
+    var container = L.DomUtil.get('mapid');
+      if(container != null){
+        container._leaflet_id = null;
+      }
+    var mymap = L.map('mapid').setView(center, 11);
 
     // add basemap:
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
