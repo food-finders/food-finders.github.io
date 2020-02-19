@@ -35,9 +35,10 @@ const getFood = (term) => {
 
     // add markers:
     let i = 0;
-    let html = "<h2>Results</h2>";
+    let html = "<h3>Results:<h3>";
+
     if (myJson.length == 0) {
-      html = html + `<p>No Food or Places found.</p>`;
+      html = html + `<p>No Food or Locations found.</p>`;
     }
     while (i < 10 && i < myJson.length) {
         let restaurant = myJson[i];
@@ -47,7 +48,7 @@ const getFood = (term) => {
             ${restaurant.display_address}
         `).openPopup();
         let addition = `<section class="results">
-                          <h2>${restaurant.name}</h2>
+                          <h3>${restaurant.name}</h3>
                           <h3>${restaurant.display_address}</h3>
                           <h3>Rating: ${restaurant.rating}</h3>
                           <h3>Price: ${restaurant.price}</h3>
