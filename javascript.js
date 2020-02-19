@@ -1,5 +1,3 @@
-const baseURL = 'https://www.apitutor.org/spotify/simple/v1/search';
-
 const search = (ev) => {
     const term = document.querySelector('#search').value;
     console.log('search for:', term);
@@ -56,7 +54,7 @@ const getFood = (term) => {
       //   html = html + addition;
       //   i = i + 1;
       // }
-      document.getElementById("search_results").innerHTML = html;
+      // document.getElementById("search_results").innerHTML = html;
     });
 };
 
