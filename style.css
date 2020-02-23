@@ -93,3 +93,10 @@ header #search {
 
   border-radius: 20px;
 }
+
+#mapid {
+  margin:auto;
+  margin-bottom: 30px;
+  height: 400px;
+  width: 40%;
+}
