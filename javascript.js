@@ -1,24 +1,26 @@
 const search = (ev) => {
     const term = document.querySelector('#search').value;
-    console.log('search for:', term);
+    const term2 = document.querySelector('#search2').value;
+    console.log('search for:', term, term2);
     // issue three Spotify queries at once...
-    getFood(term);
+    getFood(term, term2);
     if (ev) {
         ev.preventDefault();
     }
 }
 
-const getFood = (term) => {
-  const url = `https://www.apitutor.org/yelp/simple/v3/businesses/search?term=${term}&location=Evanston, IL`;
+const getFood = (term, term2) => {
+  const url = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term2}&location=${term}`;
   fetch(url)
     .then((response) => {
       return response.json();
     })
     .then((myJson) => {
       console.log(myJson);
+      data = myJson.businesses;
       const center = [
-        myJson[0].coordinates.latitude,
-        myJson[0].coordinates.longitude
+        data[0].coordinates.latitude,
+        data[0].coordinates.longitude
     ];
     // initialize map:
     var container = L.DomUtil.get('mapid');
@@ -35,27 +37,24 @@ const getFood = (term) => {
 
     // add markers:
     let i = 0;
-    /*let html = "<h3>Results:</h3>";*/
-    let html = "";
+    let html = "<h3>Results:<h3>";
 
-    if (myJson.length == 0) {
-      html = html + `<p>No Food or Locations found.</p>`;
+    if (data.length == 0) {
+      html = html + `<p>No Food found.</p>`;
     }
-    while (i < 10 && i < myJson.length) {
-        let restaurant = myJson[i];
+    while (i < 10 && i < data.length) {
+        let restaurant = data[i];
         const marker = L.marker([restaurant.coordinates.latitude, restaurant.coordinates.longitude]).addTo(mymap);
         marker.bindPopup(`
             <b>${restaurant.name}!</b><br>
             ${restaurant.display_address}
         `).openPopup();
-        let addition = `<section id="restaurant_${i}" class="restaurant">
+        let addition = `<section id="restaurant_${i}" class="results">
                           <h3>${restaurant.name}</h3>
                           <h4>${restaurant.display_address}</h4>
                           <h5>Rating: ${restaurant.rating}</h5>
                           <h5>Price: ${restaurant.price}</h5>
-                          <!--img src="${restaurant.image_url}" -->
-                          <div class="pic" style="background-image: url('${restaurant.image_url}');">
-</div>
+                          <img src="${restaurant.image_url}">
                         </section>`;
         html = html + addition;
         i = i + 1;
@@ -68,7 +67,7 @@ document.getElementById("search_button").onclick = (ev) => {
   search();
 };
 
-document.querySelector('#search').onkeyup = (ev) => {
+document.querySelector('#search2').onkeyup = (ev) => {
      console.log(ev.keyCode);
     if (ev.keyCode === 13) {
         ev.preventDefault();
