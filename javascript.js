@@ -1,16 +1,45 @@
 const search = (ev) => {
     const term = document.querySelector('#search').value;
     const term2 = document.querySelector('#search2').value;
+    price_check = ""
+    open = false
+    if (document.getElementById("check0").checked) {
+      price_check = price_check + "1";
+    };
+    if (document.getElementById("check1").checked) {
+      if (price_check.length > 0) {
+        price_check += ", 2";
+      } else {
+          price_check += "2";
+      };
+    };
+    if (document.getElementById("check2").checked) {
+      if (price_check.length > 0) {
+        price_check += ", 3"
+      } else {
+          price_check += "3";
+      };
+    };
+    if (document.getElementById("check3").checked) {
+      if (price_check.length > 0) {
+        price_check += ", 4";
+      } else {
+          price_check += "4";
+      };
+    };
+    if (document.getElementById("check4").checked) {
+      open = true
+    }
     console.log('search for:', term, term2);
     // issue three Spotify queries at once...
-    getFood(term, term2);
+    getFood(term, term2, open, price_check);
     if (ev) {
         ev.preventDefault();
     }
 }
 
-const getFood = (term, term2) => {
-  const url = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term2}&location=${term}`;
+const getFood = (term, term2, open, price_check) => {
+  const url = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term2}&location=${term}&open_now=${open}&price=${price_check}`;
   fetch(url)
     .then((response) => {
       return response.json();
@@ -47,11 +76,11 @@ const getFood = (term, term2) => {
         const marker = L.marker([restaurant.coordinates.latitude, restaurant.coordinates.longitude]).addTo(mymap);
         marker.bindPopup(`
             <b>${restaurant.name}!</b><br>
-            ${restaurant.display_address}
+            ${restaurant.location.display_address}
         `).openPopup();
         let addition = `<section id="restaurant_${i}" class="results">
                           <h3>${restaurant.name}</h3>
-                          <h4>${restaurant.display_address}</h4>
+                          <h4>${restaurant.location.display_address}</h4>
                           <h5>Rating: ${restaurant.rating}</h5>
                           <h5>Price: ${restaurant.price}</h5>
                           <img src="${restaurant.image_url}">
@@ -66,6 +95,8 @@ const getFood = (term, term2) => {
 document.getElementById("search_button").onclick = (ev) => {
   search();
 };
+
+
 
 document.querySelector('#search2').onkeyup = (ev) => {
      console.log(ev.keyCode);
