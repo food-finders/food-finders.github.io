@@ -1,6 +1,7 @@
 body {
     /*font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;*/
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Questrial', sans-serif;
+
 }
 
 a, a:hover, a:visited, a:active {
@@ -25,14 +26,13 @@ h2 {
 }
 
 body {
-  background-color: #FBEBA5;
+  background-color: #FFF5CE;
 }
 
 header {
     width: calc(100vw - 250px);
     margin-left: 180px;
-    background: #FBEBA5;
-
+    background: #FFF5CE;
 }
 
 header #search, #search2 {
@@ -42,7 +42,9 @@ header #search, #search2 {
     line-height: 40px;
     border: solid 1px #000;
     border-radius: 500px;
+    border-color: #888888;
     font-size: left;
+    font-family: 'Cabin', sans-serif;
     margin-right: auto;
     margin-bottom: 10px;
     width: 80%;
@@ -50,6 +52,31 @@ header #search, #search2 {
     font-weight:500;
     font-style:italic;
     outline: none;
+}
+
+header #price, #open_now {
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+header #search_button {
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+  margin-left: 370px;
+  height: 30px;
+  width: 100px;
+}
+
+#search_results {
+  display: grid;
+}
+
+#mapid {
+  margin-left:50px;
+  margin-bottom: 30px;
+  height: 400px;
+  width: 40%;
 }
 
 #restaurants {
@@ -61,9 +88,9 @@ header #search, #search2 {
 
 .restaurant {
   border-width: 1px;
-  border-color: black;
+  border-color: #888888;
   border-style: solid;
-  border-radius: 30px;
+  border-radius: 15px;
 
   width: 200px;
 
@@ -73,7 +100,7 @@ header #search, #search2 {
   padding-bottom: 20px;
   margin: 10px;
 
-  background-color: #FFF8DB;
+  background-color: #FFFFFF;
 }
 
 .results h3 {
