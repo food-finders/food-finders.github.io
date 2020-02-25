@@ -69,6 +69,7 @@ header #search_button {
 }
 
 #search_results {
+  margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -77,8 +78,13 @@ header #search_button {
 
 #mapid {
   grid-area: a;
+  /*border-style:solid;
+  border-color: #888888;
+  border-width: 1px;*/
+  margin-top: 10px;
+  margin-left: 30px;
   height: 400px;
-  width: 100%;
+  width: 95%;
 }
 
 #restaurants {
@@ -95,9 +101,9 @@ header #search_button {
   border-style: solid;
   border-radius: 15px;
 
-  width: 200px;
+  width: 250px;
 
-  padding-top: 10px;
+  padding-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 20px;
@@ -122,5 +128,5 @@ header #search_button {
   background-repeat: no-repeat;
   background-size: cover;
 
-  border-radius: 20px;
+  border-radius: 15px;
 }
