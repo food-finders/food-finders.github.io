@@ -44,7 +44,7 @@ header #search, #search2 {
     border-radius: 500px;
     border-color: #888888;
     font-size: left;
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Questrial', sans-serif;
     margin-right: auto;
     margin-bottom: 10px;
     width: 80%;
@@ -63,23 +63,26 @@ header #price, #open_now {
 header #search_button {
   font-family: 'Questrial', sans-serif;
   font-size: 15px;
-  margin-left: 370px;
+  margin-left: 365px;
   height: 30px;
   width: 100px;
 }
 
 #search_results {
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+   "a b";
 }
 
 #mapid {
-  margin-left:50px;
-  margin-bottom: 30px;
+  grid-area: a;
   height: 400px;
-  width: 40%;
+  width: 100%;
 }
 
 #restaurants {
+  grid-area: b;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
