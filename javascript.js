@@ -33,12 +33,16 @@ const search = (ev) => {
     console.log('search for:', term, term2);
     // issue three Spotify queries at once...
     getFood(term, term2, open, price_check);
+    console.log('search for:', term);
+    // issue three Spotify queries at once...
+    getFood(term);
     if (ev) {
         ev.preventDefault();
     }
 }
 
 const getFood = (term, term2, open, price_check) => {
+
   var url = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term2}&location=${term}&open_now=${open}`;
   if (price_check.length > 0) {
     url = url + `&price=${price_check}`
@@ -48,11 +52,14 @@ const getFood = (term, term2, open, price_check) => {
       return response.json();
     })
     .then((myJson) => {
-      console.log(myJson);
+      data = myJson.businesses;
+      console.log(data);
+
       const center = [
         myJson.businesses[0].coordinates.latitude,
         myJson.businesses[0].coordinates.longitude
     ];
+
     // initialize map:
     var container = L.DomUtil.get('mapid');
       if(container != null){
@@ -66,9 +73,7 @@ const getFood = (term, term2, open, price_check) => {
             id: 'mapbox.streets'
         }).addTo(mymap);
 
-    // add markers:
     let i = 0;
-    /*let html = "<h3>Results:</h3>";*/
     let html = "";
 
     if (myJson.businesses.length == 0) {
@@ -88,7 +93,7 @@ const getFood = (term, term2, open, price_check) => {
                           <h5>Price: ${restaurant.price}</h5>
                           <!--img src="${restaurant.image_url}" -->
                           <div class="pic" style="background-image: url('${restaurant.image_url}');">
-</div>
+                          </div>
                         </section>`;
         html = html + addition;
         i = i + 1;
@@ -106,5 +111,5 @@ document.querySelector('#search').onkeyup = (ev) => {
     if (ev.keyCode === 13) {
         ev.preventDefault();
         search();
-    }
+    };
 };
