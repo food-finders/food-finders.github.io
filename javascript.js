@@ -42,7 +42,11 @@ const search = (ev) => {
 }
 
 const getFood = (term, term2, open, price_check) => {
-  const url = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term2}&location=${term}&open_now=${open}&price=${price_check}`;
+
+  var url = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term2}&location=${term}&open_now=${open}`;
+  if (price_check.length > 0) {
+    url = url + `&price=${price_check}`
+  }
   fetch(url)
     .then((response) => {
       return response.json();
@@ -52,8 +56,10 @@ const getFood = (term, term2, open, price_check) => {
       console.log(data);
 
       const center = [
-        data[0].coordinates.latitude,
-        data[0].coordinates.longitude];
+        myJson.businesses[0].coordinates.latitude,
+        myJson.businesses[0].coordinates.longitude
+    ];
+
     // initialize map:
     var container = L.DomUtil.get('mapid');
       if(container != null){
@@ -70,11 +76,11 @@ const getFood = (term, term2, open, price_check) => {
     let i = 0;
     let html = "";
 
-    if (data.length == 0) {
+    if (myJson.businesses.length == 0) {
       html = html + `<p>No Food or Locations found.</p>`;
     }
-    while (i < 10 && i < data.length) {
-        let restaurant = data[i];
+    while (i < 10 && i < myJson.businesses.length) {
+        let restaurant = myJson.businesses[i];
         const marker = L.marker([restaurant.coordinates.latitude, restaurant.coordinates.longitude]).addTo(mymap);
         marker.bindPopup(`
             <b>${restaurant.name}!</b><br>
@@ -100,9 +106,8 @@ document.getElementById("search_button").onclick = (ev) => {
   search();
 };
 
-
-document.querySelector('#search2').onkeyup = (ev) => {
-    console.log(ev.keyCode);
+document.querySelector('#search').onkeyup = (ev) => {
+     console.log(ev.keyCode);
     if (ev.keyCode === 13) {
         ev.preventDefault();
         search();
