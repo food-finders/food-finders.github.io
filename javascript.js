@@ -86,7 +86,7 @@ const getFood = (term, term2, open, price_check) => {
             <b>${restaurant.name}!</b><br>
             ${restaurant.location.display_address}
         `).openPopup();
-        let addition = `<section id="restaurant_${i}" class="restaurant">
+        let addition = `<section class="restaurant" id="restaurant_${i}">
                           <h3>${restaurant.name}</h3>
                           <h4>${restaurant.location.display_address}</h4>
                           <h5>Rating: ${restaurant.rating}</h5>
@@ -107,6 +107,14 @@ document.getElementById("search_button").onclick = (ev) => {
 };
 
 document.querySelector('#search').onkeyup = (ev) => {
+     console.log(ev.keyCode);
+    if (ev.keyCode === 13) {
+        ev.preventDefault();
+        search();
+    };
+};
+
+document.querySelector('#search2').onkeyup = (ev) => {
      console.log(ev.keyCode);
     if (ev.keyCode === 13) {
         ev.preventDefault();

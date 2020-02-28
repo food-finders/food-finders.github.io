@@ -9,8 +9,6 @@ a, a:hover, a:visited, a:active {
     text-decoration: none;
 }
 
-
-
 h1 {
     font-family: 'Righteous', cursive;
     margin-left: 50px;
@@ -31,8 +29,11 @@ body {
 
 header {
     width: calc(100vw - 250px);
-    margin-left: 180px;
+    margin-left: 50px;
     background: #FFF5CE;
+    /*border-width: 1px;
+    border-color: black;
+    border-style: dashed;*/
 }
 
 header #search, #search2 {
@@ -55,6 +56,7 @@ header #search, #search2 {
 }
 
 header #price, #open_now {
+  margin-left: 10px;
   margin-right: auto;
   margin-top: 5px;
   margin-bottom: 10px;
@@ -63,7 +65,7 @@ header #price, #open_now {
 header #search_button {
   font-family: 'Questrial', sans-serif;
   font-size: 15px;
-  margin-left: 365px;
+  margin-left: 350px;
   height: 30px;
   width: 100px;
 }
@@ -99,7 +101,7 @@ header #search_button {
   border-width: 1px;
   border-color: #888888;
   border-style: solid;
-  border-radius: 15px;
+  /*border-radius: 15px;*/
 
   width: 250px;
 
@@ -127,6 +129,9 @@ header #search_button {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-width: 1px;
+  border-color: #000000;
+  border-style: solid;
 
-  border-radius: 15px;
+  /*border-radius: 15px;*/
 }
