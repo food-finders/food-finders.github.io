@@ -84,6 +84,10 @@ header #search_button {
   width: 100px;
 }
 
+#dimmer {
+    filter: blur(0px);
+}
+
 #search_results {
   margin-top: 50px;
   display: grid;

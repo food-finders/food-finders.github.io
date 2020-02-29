@@ -141,6 +141,7 @@ document.body.addEventListener('click', function (event) {
                     </section>`;
         document.getElementById("r-card").innerHTML = addition;
         document.getElementById("popup").style.visibility = "visible";
+        document.getElementById("dimmer").style.filter = "blur(10px)";
     };
   });
 
@@ -148,5 +149,6 @@ document.body.addEventListener('click', function (event) {
     let ev_id = event.target.id;
     if (ev_id == "close") {
       document.getElementById("popup").style.visibility = "hidden";
+      document.getElementById("dimmer").style.filter = "blur(0px)";
     };
   })
