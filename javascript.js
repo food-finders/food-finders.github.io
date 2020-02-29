@@ -1,3 +1,4 @@
+var data;
 const search = (ev) => {
     const term = document.querySelector('#search').value;
     const term2 = document.querySelector('#search2').value;
@@ -86,14 +87,15 @@ const getFood = (term, term2, open, price_check) => {
             <b>${restaurant.name}!</b><br>
             ${restaurant.location.display_address}
         `).openPopup();
-        let addition = `<section class="restaurant" id="restaurant_${i}">
-                          <h3>${restaurant.name}</h3>
-                          <h4>${restaurant.location.display_address}</h4>
-                          <h5>Rating: ${restaurant.rating}</h5>
-                          <h5>Price: ${restaurant.price}</h5>
-                          <!--img src="${restaurant.image_url}" -->
-                          <div class="pic" style="background-image: url('${restaurant.image_url}');">
+
+        let addition = `<section class="restaurant_${i} restaurant">
+                          <h3 class="restaurant_${i}">${restaurant.name}</h3>
+                          <h4 class="restaurant_${i}">${restaurant.location.display_address}</h4>
+                          <h5 class="restaurant_${i}">Rating: ${restaurant.rating}</h5>
+                          <h5 class="restaurant_${i}">Price: ${restaurant.price}</h5>
+                          <div class="restaurant_${i} pic" style="background-image: url('${restaurant.image_url}');">
                           </div>
+                          <button class="restaurant_${i}">GET MORE INFO</button>
                         </section>`;
         html = html + addition;
         i = i + 1;
@@ -121,3 +123,30 @@ document.querySelector('#search2').onkeyup = (ev) => {
         search();
     };
 };
+
+document.body.addEventListener('click', function (event) {
+  let ev_class = event.target.className;
+  if (ev_class.includes('restaurant_')) {
+    let classes = ev_class.split(" ");
+    let r_num = classes[0].substring(11);
+    let addition = `<section class="restaurant" id="popup">
+                      <h3>${data[r_num].name}</h3>
+                      <h4>${data[r_num].location.display_address}</h4>
+                      <h5>Price: ${data[r_num].price}</h5>
+                      <h5>Rating: ${data[r_num].rating}</h5>
+                      <div class="pic" style="background-image: url('${data[r_num].image_url}');"></div>
+                      <a href="${data[r_num].url}">${data[r_num].name} on Yelp</a>
+                      <h5>Phone Number: ${data[r_num].phone}</h5>
+                      <button id="close">Close</button>
+                    </section>`;
+        document.getElementById("r-card").innerHTML = addition;
+        document.getElementById("popup").style.visibility = "visible";
+    };
+  });
+
+  document.body.addEventListener('click', function (event) {
+    let ev_id = event.target.id;
+    if (ev_id == "close") {
+      document.getElementById("popup").style.visibility = "hidden";
+    };
+  })

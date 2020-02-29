@@ -5,22 +5,32 @@ body {
 }
 
 a, a:hover, a:visited, a:active {
-    color: black;
-    text-decoration: none;
+    color: blue;
+    text-decoration: underline;
 }
 
 h1 {
     font-family: 'Righteous', cursive;
     margin-left: 50px;
     margin-top: 25px;
+    margin-bottom: 10px;
     font-size: 2.0em;
 }
 
 h2 {
     font-size: 1.15em;
     margin-left: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     font-style:italic;
+}
+
+h4 {
+  margin-bottom: 10px;
+}
+
+#subtitle {
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 body {
@@ -89,6 +99,31 @@ header #search_button {
   width: 95%;
 }
 
+#r-card {
+  visibility: visible;
+}
+
+#popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  visibility: hidden;
+  border-width: 1px;
+  border-color: #888888;
+  border-style: solid;
+  /*border-radius: 15px;*/
+
+  width: 250px;
+
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  margin: 10px;
+
+  background-color: #FFFFFF;
+}
+
 #restaurants {
   grid-area: b;
   display: flex;
@@ -132,6 +167,7 @@ header #search_button {
   border-width: 1px;
   border-color: #000000;
   border-style: solid;
+  margin-bottom: 10px;
 
   /*border-radius: 15px;*/
 }
