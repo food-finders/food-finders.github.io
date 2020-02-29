@@ -23,7 +23,8 @@ h1 {
 h2 {
     font-size: 1.15em;
     margin-left: 200px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 15px;
     font-style:italic;
 }
 
@@ -37,13 +38,13 @@ h4 {
 }
 
 body {
-  background-color: #FFF5CE;
+  background-color: #C6FDFF;
 }
 
 header {
     width: calc(100vw - 250px);
     margin-left: 200px;
-    background: #FFF5CE;
+    background: #C6FDFF;
     /*border-width: 1px;
     border-color: black;
     border-style: dashed;*/
@@ -150,15 +151,6 @@ header #search_button {
   margin: 10px;
 
   background-color: #FFFFFF;
-}
-
-.results h3 {
-}
-
-.results h4 {
-}
-
-.results h5 {
 }
 
 .pic {
