@@ -54,8 +54,11 @@ const getFood = (term, term2, open, price_check) => {
     })
     .then((myJson) => {
       data = myJson.businesses;
+      if (data.length == 0) {
+        alert("No results found, please check search terms")
+        return
+      }
       console.log(data);
-
       const center = [
         myJson.businesses[0].coordinates.latitude,
         myJson.businesses[0].coordinates.longitude
