@@ -112,7 +112,7 @@ header #search_button {
 }
 
 #popup {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   visibility: hidden;
