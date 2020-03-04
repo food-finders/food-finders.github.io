@@ -132,7 +132,7 @@ document.body.addEventListener('click', function (event) {
   if (ev_class.includes('restaurant_')) {
     let classes = ev_class.split(" ");
     let r_num = classes[0].substring(11);
-    let addition = `<section class="restaurant expanded" id="popup">
+    let addition = `<section class="restaurant-expanded" id="popup">
                       <h3>${data[r_num].name}</h3>
                       <h4>${data[r_num].location.display_address}</h4>
                       <h5>Price: ${data[r_num].price}</h5>
