@@ -95,8 +95,12 @@ const getFood = (term, term2, open, price_check) => {
                           <h3 class="restaurant_${i}">${restaurant.name}</h3>
                           <h4 class="restaurant_${i}">${restaurant.location.display_address}</h4>
                           <span class="hide"><h5 class="restaurant_${i}">Rating: ${restaurant.rating}</h5></span>
-                          <h5 class="restaurant_${i}">Price: ${restaurant.price}</h5>
-                          <div class="restaurant_${i} preview-pic" style="background-image: url('${restaurant.image_url}');">
+                          <h5 class="restaurant_${i}">Price: ${restaurant.price}</h5>`;
+        if (document.getElementById("check4").checked) {
+              addition = addition + `<h5 class="restaurant_${i}">Open Now</h5>`;
+        }
+        addition = addition +
+                          `<div class="restaurant_${i} preview-pic" style="background-image: url('${restaurant.image_url}');">
                           </div>
                           <button class="restaurant_${i} info-button">More Info</button>
                         </section>`;
@@ -135,8 +139,12 @@ document.body.addEventListener('click', function (event) {
     let addition = `<section class="restaurant-expanded" id="popup">
                       <h3>${data[r_num].name}</h3>
                       <h4>${data[r_num].location.display_address}</h4>
-                      <h5>Price: ${data[r_num].price}</h5>
-                      <h5>Rating: ${data[r_num].rating}</h5>
+                      <h5>Price: ${data[r_num].price}</h5>`;
+    if (document.getElementById("check4").checked) {
+      addition = addition + `<h5>Open Now</h5>`;
+    }
+    addition = addition +
+                     `<h5>Rating: ${data[r_num].rating}</h5>
                       <h5 class="website-link">Website: <a href="${data[r_num].url}">${data[r_num].name} on Yelp</a></h5>
                       <h5 class="phone-expanded">Phone Number: ${data[r_num].phone}</h5>
                       <div class="pic-expanded" style="background-image: url('${data[r_num].image_url}');"></div>
