@@ -38,13 +38,13 @@ h4 {
 }
 
 body {
-  background-color: #C6FDFF;
+  background-color: #C2F2FF;
 }
 
 header {
     width: calc(100vw - 250px);
     margin-left: 200px;
-    background: #C6FDFF;
+    background: #C2F2FF;
     /*border-width: 1px;
     border-color: black;
     border-style: dashed;*/
@@ -73,67 +73,51 @@ header #price, #open_now {
   margin-left: 10px;
   margin-right: auto;
   margin-top: 5px;
-  margin-bottom: 15px;
 }
 
 header #search_button {
   font-family: 'Questrial', sans-serif;
   font-size: 15px;
-  margin-left: 350px;
   height: 30px;
   width: 100px;
+  float: right;
+}
+
+.buttoncontainer {
+  width: 80%;
 }
 
 #dimmer {
     filter: blur(0px);
 }
 
+/******************************************************************************/
+
 #search_results {
-  margin-top: 50px;
-  display: grid;
+  margin-top: 25px;
+  /*display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
-   "a b";
+   "a b";*/
 }
 
 #mapid {
-  grid-area: a;
+  /*grid-area: a;*/
   /*border-style:solid;
   border-color: #888888;
   border-width: 1px;*/
-  margin-top: 10px;
-  margin-left: 30px;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
   height: 400px;
-  width: 95%;
+  width: 60%;
 }
 
-#r-card {
-  visibility: visible;
-}
-
-#popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  visibility: hidden;
-  border-width: 1px;
-  border-color: #888888;
-  border-style: solid;
-  /*border-radius: 15px;*/
-
-  width: 250px;
-
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 20px;
-  margin: 10px;
-
-  background-color: #FFFFFF;
-}
+/******************************************************************************/
 
 #restaurants {
-  grid-area: b;
+  /*grid-area: b;*/
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -144,20 +128,73 @@ header #search_button {
   border-width: 1px;
   border-color: #888888;
   border-style: solid;
-  /*border-radius: 15px;*/
 
-  width: 250px;
-
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 20px;
-  margin: 10px;
+  width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 20px;
 
   background-color: #FFFFFF;
 }
 
-.pic {
+.info-button {
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+  height: 30px;
+  width: 100px;
+}
+
+.hide {
+  display: none;
+}
+
+.preview-pic {
+  width: 100%;
+  height: 175px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-width: 1px;
+  border-color: #000000;
+  border-style: solid;
+  margin-bottom: 10px;
+}
+
+/******************************************************************************/
+
+#r-card {
+  visibility: visible;
+}
+
+.expanded.restaurant {
+  position: fixed;
+  top: 25px;
+  left: 32%;
+  width: 400px;
+
+  visibility: hidden;
+
+  border-width: 1px;
+  border-color: #888888;
+  border-style: solid;
+
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+
+  background-color: #FFFFFF;
+}
+
+.phone-expanded {
+}
+
+.website-link {
+}
+
+.pic-expanded {
   width: 100%;
   height: 200px;
   background-position: center center;
@@ -167,6 +204,11 @@ header #search_button {
   border-color: #000000;
   border-style: solid;
   margin-bottom: 10px;
+}
 
-  /*border-radius: 15px;*/
+#close-button {
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+  height: 30px;
+  width: 100px;
 }

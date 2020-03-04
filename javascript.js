@@ -83,7 +83,7 @@ const getFood = (term, term2, open, price_check) => {
     if (myJson.businesses.length == 0) {
       html = html + `<p>No Food or Locations found.</p>`;
     }
-    while (i < 10 && i < myJson.businesses.length) {
+    while (i < 12 && i < myJson.businesses.length) {
         let restaurant = myJson.businesses[i];
         const marker = L.marker([restaurant.coordinates.latitude, restaurant.coordinates.longitude]).addTo(mymap);
         marker.bindPopup(`
@@ -94,11 +94,11 @@ const getFood = (term, term2, open, price_check) => {
         let addition = `<section class="restaurant_${i} restaurant">
                           <h3 class="restaurant_${i}">${restaurant.name}</h3>
                           <h4 class="restaurant_${i}">${restaurant.location.display_address}</h4>
-                          <h5 class="restaurant_${i}">Rating: ${restaurant.rating}</h5>
+                          <span class="hide"><h5 class="restaurant_${i}">Rating: ${restaurant.rating}</h5></span>
                           <h5 class="restaurant_${i}">Price: ${restaurant.price}</h5>
-                          <div class="restaurant_${i} pic" style="background-image: url('${restaurant.image_url}');">
+                          <div class="restaurant_${i} preview-pic" style="background-image: url('${restaurant.image_url}');">
                           </div>
-                          <button class="restaurant_${i}">GET MORE INFO</button>
+                          <button class="restaurant_${i} info-button">More Info</button>
                         </section>`;
         html = html + addition;
         i = i + 1;
@@ -132,15 +132,15 @@ document.body.addEventListener('click', function (event) {
   if (ev_class.includes('restaurant_')) {
     let classes = ev_class.split(" ");
     let r_num = classes[0].substring(11);
-    let addition = `<section class="restaurant" id="popup">
+    let addition = `<section class="restaurant expanded" id="popup">
                       <h3>${data[r_num].name}</h3>
                       <h4>${data[r_num].location.display_address}</h4>
                       <h5>Price: ${data[r_num].price}</h5>
                       <h5>Rating: ${data[r_num].rating}</h5>
-                      <div class="pic" style="background-image: url('${data[r_num].image_url}');"></div>
-                      <a href="${data[r_num].url}">${data[r_num].name} on Yelp</a>
-                      <h5>Phone Number: ${data[r_num].phone}</h5>
-                      <button id="close">Close</button>
+                      <h5 class="website-link">Website: <a href="${data[r_num].url}">${data[r_num].name} on Yelp</a></h5>
+                      <h5 class="phone-expanded">Phone Number: ${data[r_num].phone}</h5>
+                      <div class="pic-expanded" style="background-image: url('${data[r_num].image_url}');"></div>
+                      <button id="close-button">Close</button>
                     </section>`;
         document.getElementById("r-card").innerHTML = addition;
         document.getElementById("popup").style.visibility = "visible";
@@ -150,7 +150,7 @@ document.body.addEventListener('click', function (event) {
 
   document.body.addEventListener('click', function (event) {
     let ev_id = event.target.id;
-    if (ev_id == "close") {
+    if (ev_id == "close-button") {
       document.getElementById("popup").style.visibility = "hidden";
       document.getElementById("dimmer").style.filter = "blur(0px)";
     };
