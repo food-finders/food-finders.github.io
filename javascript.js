@@ -1,4 +1,5 @@
 var data;
+var dim = false;
 const search = (ev) => {
     const term = document.querySelector('#search').value;
     const term2 = document.querySelector('#search2').value;
@@ -244,11 +245,14 @@ const returnResults = (url) => {
         i = i + 1;
       }
       document.getElementById("restaurants").innerHTML = html;
-    })};
+    });
+    document.getElementById("back-to-top").style.visibility = "visible";
+};
 
 
 document.getElementById("search_button").onclick = (ev) => {
   search();
+  document.getElementById("back-to-top").style.visibility = "visible";
 };
 
 document.querySelector('#search').onkeyup = (ev) => {
@@ -281,6 +285,7 @@ document.body.addEventListener('click', function (event) {
     let classes = ev_class.split(" ");
     let r_num = classes[0].substring(11);
     let addition = `<section class="restaurant-expanded" id="popup">
+                      <button id="close-button">X</button>
                       <h3>${data[r_num].name}</h3>
                       <h4>${data[r_num].location.display_address}</h4>
                       <h5>Price: ${data[r_num].price}</h5>`;
@@ -292,18 +297,43 @@ document.body.addEventListener('click', function (event) {
                       <h5 class="website-link">Website: <a href="${data[r_num].url}">${data[r_num].name} on Yelp</a></h5>
                       <h5 class="phone-expanded">Phone Number: ${data[r_num].phone}</h5>
                       <div class="pic-expanded" style="background-image: url('${data[r_num].image_url}');"></div>
-                      <button id="close-button">Close</button>
                     </section>`;
-        document.getElementById("r-card").innerHTML = addition;
-        document.getElementById("popup").style.visibility = "visible";
-        document.getElementById("dimmer").style.filter = "blur(10px)";
+      document.getElementById("r-card").innerHTML = addition;
+      document.getElementById("popup").style.visibility = "visible";
+      document.getElementById("dimmer").style.filter = "blur(10px)";
+      dim = true;
     };
   });
 
   document.body.addEventListener('click', function (event) {
     let ev_id = event.target.id;
-    if (ev_id == "close-button") {
+    if (dim == true && ev_id == "close-button") {
       document.getElementById("popup").style.visibility = "hidden";
       document.getElementById("dimmer").style.filter = "blur(0px)";
+      dim = false;
     };
   })
+
+  document.body.addEventListener('click', function (event) {
+    let ev_class = event.target.className;
+    if (ev_class.includes('restaurant_') == false) {
+      document.getElementById("popup").style.visibility = "hidden";
+      document.getElementById("dimmer").style.filter = "blur(0px)";
+    }
+  })
+
+  window.onscroll = function() {
+    top_button = document.getElementById("back-to-top");
+    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+      top_button.style.display = "block";
+    } else {
+      top_button.style.display = "none";
+    }
+  };
+
+  document.body.addEventListener('click', function (event) {
+    if (event.target.id.includes("back-to-top")) {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+  });
