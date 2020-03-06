@@ -94,7 +94,7 @@ const getFood = (term, term2, open, price_check) => {
         let addition = `<section class="restaurant_${i} restaurant">
                           <h3 class="restaurant_${i}">${restaurant.name}</h3>
                           <h4 class="restaurant_${i}">${restaurant.location.display_address}</h4>
-                          <span class="hide"><h5 class="restaurant_${i}">Rating: ${restaurant.rating}</h5></span>
+                          <h5 class="restaurant_${i}">Rating: ${restaurant.rating}</h5>
                           <h5 class="restaurant_${i}">Price: ${restaurant.price}</h5>`;
         if (document.getElementById("check4").checked) {
               addition = addition + `<h5 class="restaurant_${i}">Open Now</h5>`;
