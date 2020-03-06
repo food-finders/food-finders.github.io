@@ -91,6 +91,18 @@ header #search_button {
   width: 80%;
 }
 
+#close-button {
+  float: right;
+  width: 10px;
+}
+
+#back-to-top {
+  display: none;
+  float: right;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
 #dimmer {
     filter: blur(0px);
 }
