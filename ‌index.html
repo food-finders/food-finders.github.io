@@ -25,10 +25,12 @@
         <main>
             <header>
                 <i></i>
-                <input type="search" placeholder="Enter Your Location  (ex. City, Address, Zip Code, etc.)..."
+                <input type="search" placeholder="Enter First Location  (ex. city, address, zip code...)"
                     id="search" value=""/>
-                <input type="search" placeholder="Search For Food  (ex. Restaurant, Type of Food, etc.)..."
+                <input type="search" placeholder="Enter Second Location  (optional)"
                     id="search2" value=""/>
+                <input type="search" placeholder="Search For Food  (ex. restaurant, type of food...)"
+                    id="search3" value=""/>
                 <div id="price">
                   <form>
                     <input type="checkbox" id="check0" name="check" value="checkbox0">
@@ -53,12 +55,13 @@
                 <div id="mapid"></div>
                 <section id="restaurants"></section>
             </section>
+            <button id="back-to-top" style='font-size:30px;'>&#8593;</button>
           </div>
-            <section id="r-card"></section>
-           <!-- Make sure you put this AFTER Leaflet's CSS -->
-           <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-           integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-           crossorigin=""></script>
+        <section id="r-card"></section>
+       <!-- Make sure you put this AFTER Leaflet's CSS -->
+       <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+       integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+       crossorigin=""></script>
     </body>
     <script type="text/javascript" src="javascript.js"></script>
 </html>
