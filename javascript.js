@@ -3,6 +3,8 @@ var dim = false;
 const search = (ev) => {
     const term = document.querySelector('#search').value;
     const term2 = document.querySelector('#search2').value;
+    console.log(term2);
+    const term3 = document.querySelector('#search3').value;
     price_check = ""
     open = false
     if (document.getElementById("check0").checked) {
@@ -32,31 +34,165 @@ const search = (ev) => {
     if (document.getElementById("check4").checked) {
       open = true
     }
-    console.log('search for:', term, term2);
+    console.log('search for:', term, term2, term3);
     // issue three Spotify queries at once...
-    getFood(term, term2, open, price_check);
+    getFood(term, term2, term3, open, price_check);
     console.log('search for:', term);
     // issue three Spotify queries at once...
-    getFood(term);
+    // getFood(term);
     if (ev) {
         ev.preventDefault();
     }
 }
 
-const getFood = (term, term2, open, price_check) => {
-
-  var url = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term2}&location=${term}&open_now=${open}`;
-  if (price_check.length > 0) {
-    url = url + `&price=${price_check}`
+const getFood = (term, term2, term3, open, price_check) => {
+  console.log(term2);
+  if (term2 == '') {
+    var url = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term3}&location=${term}&open_now=${open}`;
+    if (price_check.length > 0) {
+      url = url + `&price=${price_check}`
+    }
+    returnResults(url);
   }
+  else if (term == '') {
+    var url = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term3}&location=${term2}&open_now=${open}`;
+    if (price_check.length > 0) {
+      url = url + `&price=${price_check}`
+    }
+    returnResults(url);
+  }
+  else {
+    var url = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term3}&location=${term}&open_now=${open}`;
+    var url2 = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term3}&location=${term2}&open_now=${open}`;
+    if (price_check.length > 0) {
+      url = url + `&price=${price_check}`
+      url2 = url2 + `&price=${price_check}`
+    }
+    fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((myJson) => {
+        data = myJson.businesses;
+        console.log(data);
+        if (data.length == 0) {
+          alert("No results found, please check search terms (open now, price, location)")
+          return
+        }
+        const lat1 = data[0].coordinates.latitude;
+        const lon1 = data[0].coordinates.longitude;
+        return [lat1, lon1]
+      })
+      .then((coordinate) => {
+        fetch(url2)
+          .then((response) => {
+            return response.json();
+          })
+          .then((myJson) => {
+            data = myJson.businesses;
+            console.log(data);
+            if (data.length == 0) {
+              alert("No results found, please check search terms (open now, price, location)")
+              return
+            }
+            const lat2 = data[0].coordinates.latitude;
+            const lon2 = data[0].coordinates.longitude;
+            const lat3 = (coordinate[0] + lat2) / 2
+            const lon3 = (coordinate[1] + lon2) / 2
+            var url3 = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term3}&latitude=${lat3}&longitude=${lon3}&open_now=${open}`;
+            if (price_check.length > 0) {
+              url3 = url3 + `&price=${price_check}`
+            }
+            return url3
+          })
+          .then((url3) => {
+            returnResults(url3);
+          //   fetch(url3)
+          //     .then((response) => {
+          //       return response.json();
+          //     })
+          //     .then((myJson) => {
+          //       data = myJson.businesses;
+          //       console.log(data);
+          //       if (data.length == 0) {
+          //         alert("No results found, please check search terms (open now, price, location)")
+          //         return
+          //       }
+          //       console.log(data);
+          //       const center = [
+          //         myJson.businesses[0].coordinates.latitude,
+          //         myJson.businesses[0].coordinates.longitude
+          //     ];
+          //
+          //     // initialize map:
+          //     var container = L.DomUtil.get('mapid');
+          //       if(container != null){
+          //         container._leaflet_id = null;
+          //       }
+          //     var mymap = L.map('mapid').setView(center, 13);
+          //
+          //     // add basemap:
+          //     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+          //             maxZoom: 18,
+          //             id: 'mapbox.streets'
+          //         }).addTo(mymap);
+          //
+          //     let i = 0;
+          //     let html = "";
+          //
+          //     if (myJson.businesses.length == 0) {
+          //       html = html + `<p>No Food or Locations found.</p>`;
+          //     }
+          //     while (i < 12 && i < myJson.businesses.length) {
+          //         let restaurant = myJson.businesses[i];
+          //         const marker = L.marker([restaurant.coordinates.latitude, restaurant.coordinates.longitude]).addTo(mymap);
+          //         marker.bindPopup(`
+          //             <b>${restaurant.name}!</b><br>
+          //             ${restaurant.location.display_address}
+          //         `);
+          //
+          //         let addition = `<section class="restaurant_${i} restaurant">
+          //                           <h3 class="restaurant_${i}">${restaurant.name}</h3>
+          //                           <h4 class="restaurant_${i}">${restaurant.location.display_address}</h4>
+          //                           <span class="hide"><h5 class="restaurant_${i}">Rating: ${restaurant.rating}</h5></span>
+          //                           <h5 class="restaurant_${i}">Price: ${restaurant.price}</h5>`;
+          //         if (document.getElementById("check4").checked) {
+          //               addition = addition + `<h5 class="restaurant_${i}">Open Now</h5>`;
+          //         }
+          //         addition = addition +
+          //                           `<div class="restaurant_${i} preview-pic" style="background-image: url('${restaurant.image_url}');">
+          //                           </div>
+          //                           <button class="restaurant_${i} info-button">More Info</button>
+          //                         </section>`;
+          //         html = html + addition;
+          //         i = i + 1;
+          //       }
+          //       document.getElementById("restaurants").innerHTML = html;
+          //     });
+          // })
+      })
+
+    // const lat3 = (lat1 + lat2) / 2
+    // const lon3 = (lon1 + lon2) / 2
+    // var url3 = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term3}&latitude=${lat3}&longitude=${lon3}&open_now=${open}`;
+    // if (price_check.length > 0) {
+    //   url3 = url3 + `&price=${price_check}`
+    // }
+
+  })
+  }
+  };
+
+const returnResults = (url) => {
   fetch(url)
     .then((response) => {
       return response.json();
     })
     .then((myJson) => {
       data = myJson.businesses;
+      console.log(data);
       if (data.length == 0) {
-        alert("No results found, please check search terms")
+        alert("No results found, please check search terms (open now, price, location)")
         return
       }
       console.log(data);
@@ -70,7 +206,7 @@ const getFood = (term, term2, open, price_check) => {
       if(container != null){
         container._leaflet_id = null;
       }
-    var mymap = L.map('mapid').setView(center, 11);
+    var mymap = L.map('mapid').setView(center, 13);
 
     // add basemap:
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -90,7 +226,7 @@ const getFood = (term, term2, open, price_check) => {
         marker.bindPopup(`
             <b>${restaurant.name}!</b><br>
             ${restaurant.location.display_address}
-        `).openPopup();
+        `);
 
         let addition = `<section class="restaurant_${i} restaurant">
                           <h3 class="restaurant_${i}">${restaurant.name}</h3>
@@ -113,6 +249,7 @@ const getFood = (term, term2, open, price_check) => {
     document.getElementById("back-to-top").style.visibility = "visible";
 };
 
+
 document.getElementById("search_button").onclick = (ev) => {
   search();
   document.getElementById("back-to-top").style.visibility = "visible";
@@ -127,6 +264,14 @@ document.querySelector('#search').onkeyup = (ev) => {
 };
 
 document.querySelector('#search2').onkeyup = (ev) => {
+     console.log(ev.keyCode);
+    if (ev.keyCode === 13) {
+        ev.preventDefault();
+        search();
+    };
+};
+
+document.querySelector('#search3').onkeyup = (ev) => {
      console.log(ev.keyCode);
     if (ev.keyCode === 13) {
         ev.preventDefault();
