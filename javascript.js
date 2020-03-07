@@ -1,5 +1,6 @@
 var data;
 var dim = false;
+var target = "";
 const search = (ev) => {
     const term = document.querySelector('#search').value;
     const term2 = document.querySelector('#search2').value;
@@ -284,6 +285,9 @@ document.body.addEventListener('click', function (event) {
   if (ev_class.includes('restaurant_')) {
     let classes = ev_class.split(" ");
     let r_num = classes[0].substring(11);
+    if (target == "") {
+      target = classes[0];
+    };
     let addition = `<section class="restaurant-expanded" id="popup">
                       <button id="close-button">X</button>
                       <h3>${data[r_num].name}</h3>
@@ -311,14 +315,19 @@ document.body.addEventListener('click', function (event) {
       document.getElementById("popup").style.visibility = "hidden";
       document.getElementById("dimmer").style.filter = "blur(0px)";
       dim = false;
+      target = "";
     };
   })
 
   document.body.addEventListener('click', function (event) {
     let ev_class = event.target.className;
-    if (ev_class.includes('restaurant_') == false) {
+    console.log("target = " + target);
+    console.log("ev_class = " + ev_class);
+    if (ev_class.includes(target) == false) {
       document.getElementById("popup").style.visibility = "hidden";
       document.getElementById("dimmer").style.filter = "blur(0px)";
+      dim = false;
+      target = "";
     }
   })
 
