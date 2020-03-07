@@ -6,6 +6,7 @@ body {
 
 a, a:hover, a:visited, a:active {
     color: #0050FF;
+    font-weight: bold;
     text-decoration: underline;
 }
 
@@ -23,10 +24,6 @@ h2 {
     margin-bottom: 50px;
     padding-bottom: 15px;
     font-style:italic;
-}
-
-h4 {
-  margin-bottom: 10px;
 }
 
 #subtitle {
@@ -96,6 +93,12 @@ header #search_button {
     filter: blur(0px);
 }
 
+p {
+  font-size: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
 /******************************************************************************/
 
 #search_results {
@@ -133,6 +136,7 @@ header #search_button {
   border-width: 1px;
   border-color: #888888;
   border-style: solid;
+  border-radius: 5px;
 
   width: 200px;
   padding-top: 10px;
@@ -145,7 +149,7 @@ header #search_button {
 }
 
 .restaurant:hover {
-  box-shadow: 5px 5px #BBBBBB;
+  box-shadow: 5px 5px #C0C0C0;
   border-width: 2px;
   border-color: #000000;
   border-style: solid;
@@ -164,6 +168,7 @@ header #search_button {
 
 .open-now {
   color: red;
+  font-weight: bold;
 }
 
 .preview-pic {
@@ -172,8 +177,8 @@ header #search_button {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-width: 1px;
-  border-color: #000000;
+  border-width: 0.80px;
+  border-color: #505050;
   border-style: solid;
   margin-bottom: 10px;
 }
@@ -195,6 +200,7 @@ header #search_button {
   border-width: 1px;
   border-color: #000000;
   border-style: solid;
+  border-radius: 5px;
 
   padding-top: 20px;
   padding-left: 20px;
@@ -206,6 +212,7 @@ header #search_button {
 
 .phone-expanded {
   color: #008DFF;
+  font-weight: bold;
 }
 
 .pic-expanded {
@@ -214,8 +221,8 @@ header #search_button {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-width: 1px;
-  border-color: #000000;
+  border-width: 0.80px;
+  border-color: #505050;
   border-style: solid;
   margin-bottom: 10px;
 }
