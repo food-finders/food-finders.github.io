@@ -299,7 +299,7 @@ document.body.addEventListener('click', function (event) {
                      `<h5>Price: ${data[r_num].price}</h5>
                       <h5>Rating: ${data[r_num].rating} / 5</h5>
                       <h5 class="website-link">Website: <a href="${data[r_num].url}" target="_blank">${data[r_num].name} on Yelp</a></h5>
-                      <h5 class="phone-expanded">Phone Number: ${data[r_num].phone}</h5>
+                      <h5>Phone Number: <span class="phone-expanded">${data[r_num].phone}</span></h5>
                       <div class="pic-expanded" style="background-image: url('${data[r_num].image_url}');"></div>
                     </section>`;
       document.getElementById("r-card").innerHTML = addition;
