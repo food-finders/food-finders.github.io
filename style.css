@@ -69,7 +69,7 @@ header #search, #search2, #search3 {
     outline: none;
 }
 
-header #search:hover, #search2:hover {
+header #search:hover, #search2:hover, #search3:hover {
   border-color: #000000;
 }
 
