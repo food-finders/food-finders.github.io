@@ -232,10 +232,10 @@ const returnResults = (url) => {
         let addition = `<section class="restaurant_${i} restaurant">
                           <h3 class="restaurant_${i}">${restaurant.name}</h3>
                           <h4 class="restaurant_${i}">${restaurant.location.display_address}</h4>
-                          <h5 class="restaurant_${i}">Price: ${restaurant.price}</h5>
-                          <h5 class="restaurant_${i}">Rating: ${restaurant.rating} / 5</h5>`;
+                          <p class="restaurant_${i}">Price: ${restaurant.price}</p>
+                          <p class="restaurant_${i}">Rating: ${restaurant.rating} / 5</p>`;
         if (document.getElementById("check4").checked) {
-              addition = addition + `<h5 class="restaurant_${i} open-now">Open Now</h5>`;
+              addition = addition + `<p class="restaurant_${i} open-now">Open Now</p>`;
         }
         addition = addition +
                           `<div class="restaurant_${i} preview-pic" style="background-image: url('${restaurant.image_url}');">
@@ -293,13 +293,13 @@ document.body.addEventListener('click', function (event) {
                       <h3>${data[r_num].name}</h3>
                       <h4>${data[r_num].location.display_address}</h4>`;
     if (document.getElementById("check4").checked) {
-      addition = addition + `<h5 class="open-now">Open Now</h5>`;
+      addition = addition + `<p class="open-now">Open Now</p>`;
     }
     addition = addition +
-                     `<h5>Price: ${data[r_num].price}</h5>
-                      <h5>Rating: ${data[r_num].rating} / 5</h5>
-                      <h5 class="website-link">Website: <a href="${data[r_num].url}" target="_blank">${data[r_num].name} on Yelp</a></h5>
-                      <h5 class="phone-expanded">Phone Number: ${data[r_num].phone}</h5>
+                     `<p>Price: ${data[r_num].price}</p>
+                      <p>Rating: ${data[r_num].rating} / 5</p>
+                      <p>Website: <span class="website-link"><a href="${data[r_num].url}" target="_blank">${data[r_num].name} on Yelp</a></span></p>
+                      <p>Phone Number: <span class="phone-expanded">${data[r_num].phone}</span></p>
                       <div class="pic-expanded" style="background-image: url('${data[r_num].image_url}');"></div>
                     </section>`;
       document.getElementById("r-card").innerHTML = addition;

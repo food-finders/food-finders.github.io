@@ -5,7 +5,8 @@ body {
 }
 
 a, a:hover, a:visited, a:active {
-    color: blue;
+    color: #0050FF;
+    font-weight: bold;
     text-decoration: underline;
 }
 
@@ -15,9 +16,6 @@ h1 {
     margin-top: 25px;
     padding-top: 30px;
     font-size: 2.0em;
-    /*border-width: 1px;
-    border-color: black;
-    border-style: dashed;*/
 }
 
 h2 {
@@ -26,10 +24,6 @@ h2 {
     margin-bottom: 50px;
     padding-bottom: 15px;
     font-style:italic;
-}
-
-h4 {
-  margin-bottom: 10px;
 }
 
 #subtitle {
@@ -45,9 +39,6 @@ header {
     width: calc(100vw - 250px);
     margin-left: 200px;
     background: #C2F2FF;
-    /*border-width: 1px;
-    border-color: black;
-    border-style: dashed;*/
 }
 
 header #search, #search2, #search3 {
@@ -69,7 +60,7 @@ header #search, #search2, #search3 {
     outline: none;
 }
 
-header #search:hover, #search2:hover {
+header #search:hover, #search2:hover, #search3:hover {
   border-color: #000000;
 }
 
@@ -91,11 +82,6 @@ header #search_button {
   width: 80%;
 }
 
-#close-button {
-  float: right;
-  width: 25px;
-}
-
 #back-to-top {
   display: none;
   float: right;
@@ -105,6 +91,12 @@ header #search_button {
 
 #dimmer {
     filter: blur(0px);
+}
+
+p {
+  font-size: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 /******************************************************************************/
@@ -144,6 +136,7 @@ header #search_button {
   border-width: 1px;
   border-color: #888888;
   border-style: solid;
+  border-radius: 5px;
 
   width: 200px;
   padding-top: 10px;
@@ -156,7 +149,7 @@ header #search_button {
 }
 
 .restaurant:hover {
-  box-shadow: 5px 5px #BBBBBB;
+  box-shadow: 5px 5px #C0C0C0;
   border-width: 2px;
   border-color: #000000;
   border-style: solid;
@@ -174,7 +167,8 @@ header #search_button {
 }
 
 .open-now {
-  color: red;
+  color: #0AAA14;
+  font-weight: bold;
 }
 
 .preview-pic {
@@ -183,8 +177,8 @@ header #search_button {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-width: 1px;
-  border-color: #000000;
+  border-width: 0.80px;
+  border-color: #505050;
   border-style: solid;
   margin-bottom: 10px;
 }
@@ -206,6 +200,7 @@ header #search_button {
   border-width: 1px;
   border-color: #000000;
   border-style: solid;
+  border-radius: 5px;
 
   padding-top: 20px;
   padding-left: 20px;
@@ -216,9 +211,8 @@ header #search_button {
 }
 
 .phone-expanded {
-}
-
-.website-link {
+  color: #008DFF;
+  font-weight: bold;
 }
 
 .pic-expanded {
@@ -227,8 +221,8 @@ header #search_button {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-width: 1px;
-  border-color: #000000;
+  border-width: 0.80px;
+  border-color: #505050;
   border-style: solid;
   margin-bottom: 10px;
 }
@@ -236,4 +230,7 @@ header #search_button {
 #close-button {
   font-family: 'Questrial', sans-serif;
   font-size: 15px;
+  float: right;
+  height: 25px;
+  width: 25px;
 }
