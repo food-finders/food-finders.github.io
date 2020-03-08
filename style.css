@@ -4,10 +4,14 @@ body {
 
 }
 
-a, a:hover, a:visited, a:active {
+a, a:visited, a:active {
     color: #0050FF;
     font-weight: bold;
     text-decoration: underline;
+}
+
+a:hover {
+  color: #BAD0FF;
 }
 
 h1 {
@@ -75,7 +79,12 @@ header #price, #open_now {
   margin-top: 5px;
 }
 
+header #check0, #check1, #check2, #check3, #check4 {
+  cursor: pointer;
+}
+
 header #search_button {
+  cursor: pointer;
   font-family: 'Questrial', sans-serif;
   font-size: 15px;
   height: 30px;
@@ -88,6 +97,7 @@ header #search_button {
 }
 
 #back-to-top {
+  cursor: pointer;
   visibility: hidden;
   float: right;
   margin-bottom: 20px;
@@ -113,6 +123,12 @@ p {
   grid-template-areas:
    "a b";*/
 }
+
+/*.mapcontainer {
+  border-style:solid;
+  border-color: #888888;
+  border-width: 1px;
+}*/
 
 #mapid {
   /*grid-area: a;*/
@@ -154,6 +170,7 @@ p {
 }
 
 .restaurant:hover {
+  cursor: pointer;
   box-shadow: 5px 5px #C0C0C0;
   border-width: 2px;
   border-color: #000000;
@@ -161,6 +178,7 @@ p {
 }
 
 .info-button {
+  cursor: pointer;
   font-family: 'Questrial', sans-serif;
   font-size: 15px;
   height: 30px;
@@ -216,7 +234,7 @@ p {
 }
 
 .phone-expanded {
-  color: #008DFF;
+  color: #7A3BEC;
   font-weight: bold;
 }
 
@@ -233,6 +251,7 @@ p {
 }
 
 #close-button {
+  cursor: pointer;
   font-family: 'Questrial', sans-serif;
   font-size: 15px;
   float: right;
