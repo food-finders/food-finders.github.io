@@ -88,7 +88,7 @@ header #search_button {
 }
 
 #back-to-top {
-  display: none;
+  visibility: hidden;
   float: right;
   margin-bottom: 20px;
   margin-right: 20px;
