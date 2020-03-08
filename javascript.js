@@ -372,5 +372,7 @@ document.body.addEventListener('click', function (event) {
       document.getElementById("check2").checked = false;
       document.getElementById("check3").checked = false;
       document.getElementById("check4").checked = false;
+
+      document.getElementById("back-to-top").style.visibility = "hidden";
     }
   });
