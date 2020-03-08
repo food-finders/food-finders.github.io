@@ -351,7 +351,7 @@ document.body.addEventListener('click', function (event) {
   document.body.addEventListener('click', function (event) {
     if (event.target.id.includes("title")) {
       let search = document.getElementById("search");
-      search.placeholder = "Enter First Location (ex. city, address, zip code...)";
+      search.placeholder = "Enter First Location  (ex. city, address, zip code...)";
       search.value = "";
       let search2 = document.getElementById("search2");
       search2.placeholder = "Enter Second Location  (optional)";
