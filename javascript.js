@@ -2,6 +2,7 @@ var data;
 var dim = false;
 var target = "";
 const search = (ev) => {
+    console.log("searching");
     const term = document.querySelector('#search').value;
     const term2 = document.querySelector('#search2').value;
     console.log(term2);
@@ -344,5 +345,32 @@ document.body.addEventListener('click', function (event) {
     if (event.target.id.includes("back-to-top")) {
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+  });
+
+  document.body.addEventListener('click', function (event) {
+    if (event.target.id.includes("title")) {
+      let search = document.getElementById("search");
+      search.placeholder = "Enter First Location (ex. city, address, zip code...)";
+      search.value = "";
+      let search2 = document.getElementById("search2");
+      search2.placeholder = "Enter Second Location  (optional)";
+      search2.value = "";
+      let search3 = document.getElementById("search3");
+      search3.placeholder = "Search For Food  (ex. restaurant, type of food...)";
+      search3.value = "";
+
+      //clear results
+      let search_results = document.getElementById("search_results");
+      search_results.innerHTML = `<br></br>
+                                  <div id="mapid"></div>
+                                  <section id="restaurants"></section>`;
+      document.getElementById("r-card").innerHTML = "";
+
+      document.getElementById("check0").checked = false;
+      document.getElementById("check1").checked = false;
+      document.getElementById("check2").checked = false;
+      document.getElementById("check3").checked = false;
+      document.getElementById("check4").checked = false;
     }
   });

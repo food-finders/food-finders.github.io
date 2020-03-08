@@ -14,7 +14,7 @@
     <body id="container">
       <div id="dimmer">
         <aside id="sidebar">
-            <h1>
+            <h1 id="title">
                 Food Finder
             </h1>
             <h2 id="subtitle">
@@ -22,7 +22,7 @@
             </h2>
         </aside>
 
-        <main>
+        <main id="main">
             <header>
                 <i></i>
                 <input type="search" placeholder="Enter First Location  (ex. city, address, zip code...)"
@@ -51,13 +51,14 @@
             </header>
 
             <section id="search_results">
-                <br><br>
+                <br></br>
                 <div id="mapid"></div>
                 <section id="restaurants"></section>
             </section>
             <button id="back-to-top" style='font-size:30px;'>&#8593;</button>
           </div>
         <section id="r-card"></section>
+      </main>
        <!-- Make sure you put this AFTER Leaflet's CSS -->
        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
