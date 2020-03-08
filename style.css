@@ -20,6 +20,11 @@ h1 {
     border-style: dashed;*/
 }
 
+h1:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 h2 {
     font-size: 1.15em;
     margin-left: 200px;
