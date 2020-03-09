@@ -9,6 +9,7 @@ const search = (ev) => {
     const term3 = document.querySelector('#search3').value;
     price_check = ""
     open = false
+    rating_val = 0
     if (document.getElementById("check0").checked) {
       price_check = price_check + "1";
     };
@@ -36,9 +37,24 @@ const search = (ev) => {
     if (document.getElementById("check4").checked) {
       open = true
     }
+    if (document.getElementById("check5").checked) {
+      rating_val = 1
+    }
+    if (document.getElementById("check6").checked) {
+      rating_val = 2
+    }
+    if (document.getElementById("check7").checked) {
+      rating_val = 3
+    }
+    if (document.getElementById("check8").checked) {
+      rating_val = 4
+    }
+    if (document.getElementById("check9").checked) {
+      rating_val = 5
+    }
     console.log('search for:', term, term2, term3);
     // issue three Spotify queries at once...
-    getFood(term, term2, term3, open, price_check);
+    getFood(term, term2, term3, open, price_check, rating_val);
     console.log('search for:', term);
     // issue three Spotify queries at once...
     // getFood(term);
@@ -47,21 +63,21 @@ const search = (ev) => {
     }
 }
 
-const getFood = (term, term2, term3, open, price_check) => {
+const getFood = (term, term2, term3, open, price_check, rating_val) => {
   console.log(term2);
   if (term2 == '') {
     var url = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term3}&location=${term}&open_now=${open}`;
     if (price_check.length > 0) {
       url = url + `&price=${price_check}`
     }
-    returnResults(url);
+    returnResults(url, rating_val);
   }
   else if (term == '') {
     var url = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term3}&location=${term2}&open_now=${open}`;
     if (price_check.length > 0) {
       url = url + `&price=${price_check}`
     }
-    returnResults(url);
+    returnResults(url, rating_val);
   }
   else {
     var url = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term3}&location=${term}&open_now=${open}`;
@@ -108,7 +124,7 @@ const getFood = (term, term2, term3, open, price_check) => {
             return url3
           })
           .then((url3) => {
-            returnResults(url3);
+            returnResults(url3, rating_val);
           //   fetch(url3)
           //     .then((response) => {
           //       return response.json();
@@ -185,7 +201,7 @@ const getFood = (term, term2, term3, open, price_check) => {
   }
   };
 
-const returnResults = (url) => {
+const returnResults = (url, rating_val) => {
   fetch(url)
     .then((response) => {
       return response.json();
@@ -222,30 +238,35 @@ const returnResults = (url) => {
     if (myJson.businesses.length == 0) {
       html = html + `<p>No Food or Locations found.</p>`;
     }
-    while (i < 12 && i < myJson.businesses.length) {
-        let restaurant = myJson.businesses[i];
-        const marker = L.marker([restaurant.coordinates.latitude, restaurant.coordinates.longitude]).addTo(mymap);
-        marker.bindPopup(`
-            <b>${restaurant.name}!</b><br>
-            ${restaurant.location.display_address}
-        `);
+    max_results = 12
+    counter = 0
+    while (i < max_results && counter < myJson.businesses.length) {
+        let restaurant = myJson.businesses[counter];
+        if (restaurant.rating >= rating_val) {
+          const marker = L.marker([restaurant.coordinates.latitude, restaurant.coordinates.longitude]).addTo(mymap);
+          marker.bindPopup(`
+              <b>${restaurant.name}!</b><br>
+              ${restaurant.location.display_address}
+          `);
 
-        let addition = `<section class="restaurant_${i} restaurant">
-                          <h3 class="restaurant_${i}">${restaurant.name}</h3>
-                          <h4 class="restaurant_${i}">${restaurant.location.display_address}</h4>
-                          <p class="restaurant_${i}">Price: ${restaurant.price}</p>
-                          <p class="restaurant_${i}">Rating: ${restaurant.rating} / 5</p>`;
-        if (document.getElementById("check4").checked) {
-              addition = addition + `<p class="restaurant_${i} open-now">Open Now</p>`;
+          let addition = `<section class="restaurant_${counter} restaurant">
+                            <h3 class="restaurant_${counter}">${restaurant.name}</h3>
+                            <h4 class="restaurant_${counter}">${restaurant.location.display_address}</h4>
+                            <p class="restaurant_${counter}">Price: ${restaurant.price}</p>
+                            <p class="restaurant_${counter}">Rating: ${restaurant.rating} / 5</p>`;
+          if (document.getElementById("check4").checked) {
+                addition = addition + `<p class="restaurant_${counter} open-now">Open Now</p>`;
+          }
+          addition = addition +
+                            `<div class="restaurant_${counter} preview-pic" style="background-image: url('${restaurant.image_url}');">
+                            </div>
+                            <button class="restaurant_${counter} info-button">More Info</button>
+                          </section>`;
+          html = html + addition;
+          i = i + 1;
         }
-        addition = addition +
-                          `<div class="restaurant_${i} preview-pic" style="background-image: url('${restaurant.image_url}');">
-                          </div>
-                          <button class="restaurant_${i} info-button">More Info</button>
-                        </section>`;
-        html = html + addition;
-        i = i + 1;
-      }
+        counter = counter + 1
+        }
       document.getElementById("restaurants").innerHTML = html;
     });
     document.getElementById("back-to-top").style.visibility = "visible";
