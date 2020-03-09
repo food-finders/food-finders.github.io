@@ -225,6 +225,7 @@ const returnResults = (url, rating_val) => {
         container._leaflet_id = null;
       }
     var mymap = L.map('mapid').setView(center, 13);
+    document.querySelector('#mapid').style.border = "solid 1.5px #888888";
 
     // add basemap:
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
