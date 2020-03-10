@@ -3,3 +3,34 @@
 ---
 permalink: /index.html
 ---
+
+# Final Report
+## Henry Raeder, Ellen Wade, & Sharon Wong
+
+### Problem & Related Work
+#### Inviting friends out to a meal to hang out when everyone doesn’t live within the same immediate area can pose many challenges, the main one being convenience. Trying to decide on a place to eat that is easily accessible to everyone usually requires some arbitrary searching for “food near me” and sharing these suggestions with friends. However, evaluating the quality or worthwhileness of these restaurants usually requires further information sleuthing on food review websites. As presented in this scenario, having to toggle back-and-forth between an application that handles travel logistics and an application that handles food reviews while having to communicate all of this information with friends can prove to be cumbersome and time-wasting. In order to ease this stress and difficulty, combining both the restaurant reviews and travel logistics into one interface will prove to be more efficient when solidifying mealtime plans with friends who don’t all live in the same place.
+
+#### Many apps focus on either the logistical aspect of getting to the restaurant, or the food aspect of whether or not the restaurant is good, but not both. For example, Yelp primarily focuses on food recommendations and ratings, but does not handle meeting arrangements. Similarly, Google Maps offers vague restaurant ratings and directions for how to get there, but does not have a platform for inviting friends to join.
+
+#### Another app, foodfriends, based in Spain, has options for users to make dining arrangements with other strangers who also use the app or make dining arrangements with friends they already know. However, foodfriends does not handle logistics of the meeting (how to get there, how far away it is, etc). Our website could build on the social foundation of foodfriends, while adding in a more practical, mathematical side that could inform friends of how difficult their commute to the meal would be.
+
+#### Naturally, certain parts of the issue at hand are more conducive to a website than others. For example, while our website may be great at calculating ratings and travel times, promoting communication and connection between friends may be more difficult. The users themselves will need to decide to get together, and then our website can come in to help facilitate that process. Overall, our website will fix the technological gap that people must currently use multiple apps to fill, and will streamline the process of getting together to grab a bite to eat conveniently.
+
+#### Our website would combine the logistical part of Google Maps with the social side of foodfriends. Ideally, users should be able to input their addresses and get suggestions for restaurants near both of them. They would also be able to filter options by distance, price, and cuisine. As for connecting people, there could be a “friends” and “events” system similar to Facebook, where people can create a dinner event and invite friends to it. Once in the event, people could vote on dinner places that would be convenient for them based on the information we provide. However, these design choices would have to be worked out in user research throughout the development process.
+
+### User Research
+#### We hoped to learn: 
+
+* Features users like/dislike in similar apps
+* What users see as the largest obstacles towards getting meals with friends
+* How users usually communicate with friends
+* Do users wish there was a more streamlined process?
+
+### Our Research Approach
+#### We took an interview approach, since we thought it would be more efficient than a contextual inquiry, as it was hard to fabricate the situation of making plans with friends in the moment. Some of the questions we asked were:
+
+* How do you and your friends decide where to eat together? 
+* Do you find making plans with friends easier in person or over the phone(text)?
+* Do you ever talk about going out to eat but not go? What stops you?
+* What is your normal form of transportation to meet friends?
+* What do you often hear people complain about when they try to meet friends?
