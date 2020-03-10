@@ -34,3 +34,29 @@ permalink: /index.html
 * Do you ever talk about going out to eat but not go? What stops you?
 * What is your normal form of transportation to meet friends?
 * What do you often hear people complain about when they try to meet friends?
+
+### Users' Needs and Goals
+#### The user needs include: sharing available times with friends, directions to the meeting place. One thing that was surprising was the suggestion to use Google Calendar sharing to communicate potential meeting times. Additionally, there was a much larger focus on the type of restaurant over the ratings, which lends credence to the idea that groups may be in the “mood” for a type of food, so the place with the highest ratings takes second importance. The biggest obstacles the users would face would probably be actually finding time to meet, so the inclusion of some kind of scheduling program may be more essential than we initially realized. This can be seen as an opportunity for innovation, as previous interfaces we have studied don’t appear to have a scheduling aspect to them, even though time is one of the main factors that affect whether or not people go out to eat in the first place.
+
+#### It is necessary to keep in mind that the circumstances of every user varies, and as such, the needs of each user varies as well. For example, some users might place scheduling as more of a priority over type of restaurant, whereas others might factor in wanting to try new places to eat more when planning an outing. While factoring all of these features, it is important to keep the application as streamlined as possible, as adding too many features may potentially complicate the application’s interface and make it harder for the user to use.
+
+### Various Users (Personas)
+
+### Paper Prototyping (P4) 
+* Add photo here
+
+### High Fidelity Prototyping (P5, P6, & P7)
+* Add lots of photos here
+# Describe the tasks and how app features support task
+# Describe the three components
+
+### Reflection
+# What we managed to accomplish
+# What next steps would be if we had more time
+
+### Links
+#### Repository:
+[https://github.com/food-finders/food-finders.github.io]
+#### Live Website:
+[https://food-finders.github.io/]
+#### These are best viewed in Chrome on Windows
