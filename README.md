@@ -43,12 +43,30 @@ permalink: /index.html
 ### Various Users (Personas)
 
 ### Paper Prototyping (P4) 
-* Add photo here
+![P4 Prototype](https://food-finders.github.io/paper-prototype.png)
 
 ### High Fidelity Prototyping (P5, P6, & P7)
-* Add lots of photos here
+#### P5 Prototype
+![P5 Prototype](https://food-finders.github.io/p5.png)
+#### P6 Prototype 
+![P6 Prototype](https://food-finders.github.io/p6.png)
+
 # Describe the tasks and how app features support task
+### Tasks
+#### Task 1: 
+#### Task 2:
+#### Task 3:
+
 # Describe the three components
+### Components
+#### Component 1: External Data Integration
+##### We used Yelp API and APITutor to integrate Yelp's business finding tool into our project to find restaurants. 
+
+#### Component 2: Interactive Data Filter
+##### We added interactive data filters (ie. price, ratings, open now) to show restaurants with certain characteristics.
+
+#### Component 3: Interactive Data Selection
+##### We created restaurant cards to show restaurant information. Clicking the "More Info" button selects the restaurant card and shows additional information relevant to only that restaurant.
 
 ### Reflection
 # What we managed to accomplish
