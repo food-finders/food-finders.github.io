@@ -43,13 +43,13 @@ permalink: /index.html
 ### Various Users (Personas)
 
 ### Paper Prototyping (P4) 
-![P4 Prototype](https://food-finders.github.io/paper-prototype.png)
+![P4 Prototype](https://github.com/food-finders/food-finders.github.io/blob/master/paper-prototype.PNG)
 
 ### High Fidelity Prototyping (P5, P6, & P7)
 #### P5 Prototype
-![P5 Prototype](https://food-finders.github.io/p5.png)
+![P5 Prototype](https://github.com/food-finders/food-finders.github.io/blob/master/p5.PNG)
 #### P6 Prototype 
-![P6 Prototype](https://food-finders.github.io/p6.png)
+![P6 Prototype](https://github.com/food-finders/food-finders.github.io/blob/master/p6.PNG)
 
 # Describe the tasks and how app features support task
 ### Tasks
