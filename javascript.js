@@ -7,50 +7,50 @@ const search = (ev) => {
     const term2 = document.querySelector('#search2').value;
     console.log(term2);
     const term3 = document.querySelector('#search3').value;
-    price_check = ""
-    open = false
-    rating_val = 0
+    price_check = "";
+    open = false;
+    rating_val = 0;
     if (document.getElementById("check0").checked) {
       price_check = price_check + "1";
-    };
+    }
     if (document.getElementById("check1").checked) {
       if (price_check.length > 0) {
         price_check += ", 2";
       } else {
           price_check += "2";
-      };
-    };
+      }
+    }
     if (document.getElementById("check2").checked) {
       if (price_check.length > 0) {
-        price_check += ", 3"
+        price_check += ", 3";
       } else {
           price_check += "3";
-      };
-    };
+      }
+    }
     if (document.getElementById("check3").checked) {
       if (price_check.length > 0) {
         price_check += ", 4";
       } else {
           price_check += "4";
-      };
-    };
+      }
+    }
     if (document.getElementById("check4").checked) {
-      open = true
+      open = true;
     }
     if (document.getElementById("check5").checked) {
-      rating_val = 1
+      rating_val = 1;
     }
     if (document.getElementById("check6").checked) {
-      rating_val = 2
+      rating_val = 2;
     }
     if (document.getElementById("check7").checked) {
-      rating_val = 3
+      rating_val = 3;
     }
     if (document.getElementById("check8").checked) {
-      rating_val = 4
+      rating_val = 4;
     }
     if (document.getElementById("check9").checked) {
-      rating_val = 5
+      rating_val = 5;
     }
     console.log('search for:', term, term2, term3);
     // issue three Spotify queries at once...
@@ -61,14 +61,14 @@ const search = (ev) => {
     if (ev) {
         ev.preventDefault();
     }
-}
+};
 
 const getFood = (term, term2, term3, open, price_check, rating_val) => {
   console.log(term2);
   if (term2 == '') {
     var url = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term3}&location=${term}&open_now=${open}`;
     if (price_check.length > 0) {
-      url = url + `&price=${price_check}`
+      url = url + `&price=${price_check}`;
     }
     returnResults(url, rating_val);
   }
@@ -99,7 +99,7 @@ const getFood = (term, term2, term3, open, price_check, rating_val) => {
         }
         const lat1 = data[0].coordinates.latitude;
         const lon1 = data[0].coordinates.longitude;
-        return [lat1, lon1]
+        return [lat1, lon1];
       })
       .then((coordinate) => {
         fetch(url2)
@@ -110,18 +110,18 @@ const getFood = (term, term2, term3, open, price_check, rating_val) => {
             data = myJson.businesses;
             console.log(data);
             if (data.length == 0) {
-              alert("No results found, please check search terms (open now, price, location)")
-              return
+              alert("No results found, please check search terms (open now, price, location)");
+              return;
             }
             const lat2 = data[0].coordinates.latitude;
             const lon2 = data[0].coordinates.longitude;
-            const lat3 = (coordinate[0] + lat2) / 2
-            const lon3 = (coordinate[1] + lon2) / 2
+            const lat3 = (coordinate[0] + lat2) / 2;
+            const lon3 = (coordinate[1] + lon2) / 2;
             var url3 = `https://www.apitutor.org/yelp/v3/businesses/search?term=${term3}&latitude=${lat3}&longitude=${lon3}&open_now=${open}`;
             if (price_check.length > 0) {
-              url3 = url3 + `&price=${price_check}`
+              url3 = url3 + `&price=${price_check}`;
             }
-            return url3
+            return url3;
           })
           .then((url3) => {
             returnResults(url3, rating_val);
@@ -188,7 +188,7 @@ const getFood = (term, term2, term3, open, price_check, rating_val) => {
           //       document.getElementById("restaurants").innerHTML = html;
           //     });
           // })
-      })
+      });
 
     // const lat3 = (lat1 + lat2) / 2
     // const lon3 = (lon1 + lon2) / 2
@@ -197,7 +197,7 @@ const getFood = (term, term2, term3, open, price_check, rating_val) => {
     //   url3 = url3 + `&price=${price_check}`
     // }
 
-  })
+  });
   }
   };
 
@@ -210,8 +210,8 @@ const returnResults = (url, rating_val) => {
       data = myJson.businesses;
       console.log(data);
       if (data.length == 0) {
-        alert("No results found, please check search terms (open now, price, location)")
-        return
+        alert("No results found, please check search terms (open now, price, location)");
+        return;
       }
       console.log(data);
       const center = [
@@ -239,8 +239,8 @@ const returnResults = (url, rating_val) => {
     if (myJson.businesses.length == 0) {
       html = html + `<p>No Food or Locations found.</p>`;
     }
-    max_results = 12
-    counter = 0
+    max_results = 12;
+    counter = 0;
     while (i < max_results && counter < myJson.businesses.length) {
         let restaurant = myJson.businesses[counter];
         if (restaurant.rating >= rating_val) {
@@ -266,7 +266,7 @@ const returnResults = (url, rating_val) => {
           html = html + addition;
           i = i + 1;
         }
-        counter = counter + 1
+        counter = counter + 1;
         }
       document.getElementById("restaurants").innerHTML = html;
     });
@@ -384,7 +384,7 @@ document.body.addEventListener('click', function (event) {
 
       //clear results
       let search_results = document.getElementById("search_results");
-      search_results.innerHTML = `<br></br>
+      search_results.innerHTML = `<br><br>
                                   <div id="mapid"></div>
                                   <section id="restaurants"></section>`;
       document.getElementById("r-card").innerHTML = "";
