@@ -56,12 +56,15 @@ permalink: /index.html
 
 ### Components
 #### Component 1: External Data Integration
+![External Data Integration](https://github.com/food-finders/food-finders.github.io/blob/master/search_bars.PNG)
 ##### We used Yelp API and APITutor to integrate Yelp's business finding tool into our project to find restaurants. This allows us to inform our users of their restaurant options!
 
 #### Component 2: Interactive Data Filter
+![Interactive Data Filter](https://github.com/food-finders/food-finders.github.io/blob/master/filters.PNG)
 ##### We added interactive data filters (ie. price, ratings, open now) to show restaurants with certain characteristics. Clicking the checkboxes changes the filter and determines which restaurants are shown. This helps users find the perfect restaurant!
 
 #### Component 3: Interactive Data Selection
+![Interactive Data Selection](https://github.com/food-finders/food-finders.github.io/blob/master/single-card.PNG)
 ##### We created restaurant cards to show restaurant information. Clicking the "More Info" button selects the restaurant card and shows additional information relevant to only that restaurant. This helps users learn more about a restaurant!
 
 ### Reflection
