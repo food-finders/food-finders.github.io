@@ -10,13 +10,9 @@ permalink: /index.html
 ### Problem & Related Work
 #### Inviting friends out to a meal to hang out when everyone doesn’t live within the same immediate area can pose many challenges, the main one being convenience. Trying to decide on a place to eat that is easily accessible to everyone usually requires some arbitrary searching for “food near me” and sharing these suggestions with friends. However, evaluating the quality or worthwhileness of these restaurants usually requires further information sleuthing on food review websites. As presented in this scenario, having to toggle back-and-forth between an application that handles travel logistics and an application that handles food reviews while having to communicate all of this information with friends can prove to be cumbersome and time-wasting. In order to ease this stress and difficulty, combining both the restaurant reviews and travel logistics into one interface will prove to be more efficient when solidifying mealtime plans with friends who don’t all live in the same place.
 
-#### Many apps focus on either the logistical aspect of getting to the restaurant, or the food aspect of whether or not the restaurant is good, but not both. For example, Yelp primarily focuses on food recommendations and ratings, but does not handle meeting arrangements. Similarly, Google Maps offers vague restaurant ratings and directions for how to get there, but does not have a platform for inviting friends to join.
+#### Many apps focus on either the logistical aspect of getting to the restaurant, or the food aspect of whether or not the restaurant is good, but not both. For example, Yelp primarily focuses on food recommendations and ratings, but does not handle meeting arrangements. Similarly, Google Maps offers vague restaurant ratings and directions for how to get there, but does not have a platform for inviting friends to join. Another app, foodfriends, based in Spain, has options for users to make dining arrangements with other strangers who also use the app or make dining arrangements with friends they already know. However, foodfriends does not handle logistics of the meeting (how to get there, how far away it is, etc). 
 
-#### Another app, foodfriends, based in Spain, has options for users to make dining arrangements with other strangers who also use the app or make dining arrangements with friends they already know. However, foodfriends does not handle logistics of the meeting (how to get there, how far away it is, etc). Our website could build on the social foundation of foodfriends, while adding in a more practical, mathematical side that could inform friends of how difficult their commute to the meal would be.
-
-#### Naturally, certain parts of the issue at hand are more conducive to a website than others. For example, while our website may be great at calculating ratings and travel times, promoting communication and connection between friends may be more difficult. The users themselves will need to decide to get together, and then our website can come in to help facilitate that process. Overall, our website will fix the technological gap that people must currently use multiple apps to fill, and will streamline the process of getting together to grab a bite to eat conveniently.
-
-#### Our website would combine the logistical part of Google Maps with the social side of foodfriends. Ideally, users should be able to input their addresses and get suggestions for restaurants near both of them. They would also be able to filter options by distance, price, and cuisine. As for connecting people, there could be a “friends” and “events” system similar to Facebook, where people can create a dinner event and invite friends to it. Once in the event, people could vote on dinner places that would be convenient for them based on the information we provide. However, these design choices would have to be worked out in user research throughout the development process.
+#### Naturally, certain parts of the issue at hand are more conducive to a website than others. For example, while our website may be great at calculating ratings and travel times, promoting communication and connection between friends may be more difficult. The users themselves will need to decide to get together, and then our website can come in to help facilitate that process. Overall, our website will fix the technological gap that people must currently use multiple apps to fill, and will streamline the process of getting together to grab a bite to eat conveniently. Our website would combine the logistical part of Google Maps with the social side of foodfriends. Ideally, users should be able to input their addresses and get suggestions for restaurants near both of them. They would also be able to filter options by distance, price, and cuisine. 
 
 ### User Research
 #### We hoped to learn: 
@@ -44,6 +40,7 @@ permalink: /index.html
 
 ### Paper Prototyping (P4) 
 ![P4 Prototype](https://github.com/food-finders/food-finders.github.io/blob/master/paper-prototype.PNG)
+#### The main complaint about our paper prototype was that it was cluttered and confusing. We had too many buttons and textboxes without clear uses. To fix this, we greatly simplified our design into a one page interface and reduced the amount of data and features on the screen.
 
 ### High Fidelity Prototyping (P5, P6, & P7)
 #### P5 Prototype
@@ -53,9 +50,9 @@ permalink: /index.html
 
 # Describe the tasks and how app features support task
 ### Tasks
-#### Task 1: 
-#### Task 2:
-#### Task 3:
+#### Task 1: Search for a restaurant. The user needs to be able to find a restaurant by using the search bar.
+#### Task 2: Filter the search results. The user needs to be able to specify what kinds of restaurants they want to see. 
+#### Task 3: Get more information about a restaurant. The user needs to be able to get specific info about individual restaurants.
 
 ### Components
 #### Component 1: External Data Integration
