@@ -73,8 +73,8 @@ permalink: /index.html
 ![External Data Integration](https://github.com/food-finders/food-finders.github.io/blob/master/search_bars.PNG)
 #### Task 2: Filter the search results. The user needs to be able to specify what kinds of restaurants they want to see by using the checkboxes to specify results based on price, rating, and whether or not it's open now.
 ![Interactive Data Filter](https://github.com/food-finders/food-finders.github.io/blob/master/filters.PNG)
-#### Task 3: Get more information about a restaurant. The user needs to be able to get specific info about individual restaurants, such as phone number and 
-![Interactive Data Selection](https://github.com/food-finders/food-finders.github.io/blob/master/single-card.PNG)
+#### Task 3: Get more information about a restaurant. The user needs to be able to get specific info about individual restaurants, such as phone number and its website.
+![Interactive Data Selection](https://github.com/food-finders/food-finders.github.io/blob/master/card_expanded.PNG)
 
 ### Components
 #### Component 1: External Data Integration
