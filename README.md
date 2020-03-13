@@ -94,6 +94,7 @@ permalink: /index.html
 
 ### Links
 #### Repository:
+[https://github.com/food-finders/food-finders/tree/project_8]
 [https://github.com/food-finders/food-finders.github.io]
 #### Live Website:
 [https://food-finders.github.io/]
