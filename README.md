@@ -63,7 +63,9 @@ permalink: /index.html
 #### P5 Prototype
 ![P5 Prototype](https://github.com/food-finders/food-finders.github.io/blob/master/p5.PNG)
 #### P6 Prototype 
-![P6 Prototype](https://github.com/food-finders/food-finders.github.io/blob/master/p6.PNG)
+![P6 Prototype](https://github.com/food-finders/food-finders.github.io/blob/master/p6_side.PNG)
+#### P7 Prototype 
+![P7 Prototype](https://github.com/food-finders/food-finders.github.io/blob/master/p7.PNG)
 
 # Describe the tasks and how app features support task
 ### Tasks
