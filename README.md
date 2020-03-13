@@ -93,9 +93,10 @@ permalink: /index.html
 #### If we had more time, we would like to implement some of the other features we were looking at. For example, it would be fantastic if we could implement some kind of calendar or planning section, which would allow users to look at restaurant availability over different times. Additionally, we would like to add a share function, which would let people share these plans with their friends. The ultimate goal would be a fully collaborative process, where multiple people could log on, and then use our website to plan together using the calendar and search function. Additionally, we could further streamline the design of our website as we add more features, including multiple different pages, or automatically redirecting to the restaurant websites to look at menus. Finally, while our location search algorithm works, it is very basic. If we could integrate Google Maps data, we could look at real-time commutes from different locations, which would be a great leap towards our intended function.
 
 ### Links
-#### Repository:
-![https://github.com/food-finders/food-finders/tree/project_8]
-![https://github.com/food-finders/food-finders.github.io]
+#### Repository (code files only):
+[https://github.com/food-finders/food-finders/tree/project_8]
+#### Repository (README.md included):
+[https://github.com/food-finders/food-finders.github.io]
 #### Live Website:
 [https://food-finders.github.io/]
 #### These are best viewed in Chrome on Windows
