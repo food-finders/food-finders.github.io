@@ -37,6 +37,7 @@ permalink: /index.html
 #### It is necessary to keep in mind that the circumstances of every user varies, and as such, the needs of each user varies as well. For example, some users might place scheduling as more of a priority over type of restaurant, whereas others might factor in wanting to try new places to eat more when planning an outing. While factoring all of these features, it is important to keep the application as streamlined as possible, as adding too many features may potentially complicate the application’s interface and make it harder for the user to use.
 
 ### Various Users (Personas)
+![Amy King](https://github.com/food-finders/food-finders.github.io/blob/master/Amy King.PNG)
 
 ### Paper Prototyping (P4) 
 ![P4 Prototype](https://github.com/food-finders/food-finders.github.io/blob/master/paper-prototype.PNG)
