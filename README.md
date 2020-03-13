@@ -67,13 +67,13 @@ permalink: /index.html
 #### P7 Prototype 
 ![P7 Prototype](https://github.com/food-finders/food-finders.github.io/blob/master/p7.PNG)
 
-# Describe the tasks and how app features support task
+### Describe the tasks and how app features support task
 ### Tasks
-#### Task 1: Search for a restaurant. The user needs to be able to find a restaurant by using the search bar.
+#### Task 1: Search for a restaurant. The user needs to be able to find a restaurant by using the search bars that query their location and what type of food they want to eat.
 ![External Data Integration](https://github.com/food-finders/food-finders.github.io/blob/master/search_bars.PNG)
-#### Task 2: Filter the search results. The user needs to be able to specify what kinds of restaurants they want to see. 
+#### Task 2: Filter the search results. The user needs to be able to specify what kinds of restaurants they want to see by using the checkboxes to specify results based on price, rating, and whether or not it's open now.
 ![Interactive Data Filter](https://github.com/food-finders/food-finders.github.io/blob/master/filters.PNG)
-#### Task 3: Get more information about a restaurant. The user needs to be able to get specific info about individual restaurants.
+#### Task 3: Get more information about a restaurant. The user needs to be able to get specific info about individual restaurants, such as phone number and 
 ![Interactive Data Selection](https://github.com/food-finders/food-finders.github.io/blob/master/single-card.PNG)
 
 ### Components
@@ -87,9 +87,9 @@ permalink: /index.html
 ##### We created restaurant cards to show restaurant information. Clicking the "More Info" button selects the restaurant card and shows additional information relevant to only that restaurant. This helps users learn more about a restaurant!
 
 ### Reflection
-# What we managed to accomplish
+### What we managed to accomplish
 #### In general, we managed to fulfill a large portion of our initial goals when it came to our prototype process. We managed to integrate a three-part search that allowed for location-based calculations, filters for most of the important factors when choosing a restaurant, and a way for users to interact with the data and gain enough information to make a plan. Additionally, we managed to implement all of these functions in a user-friendly, task-oriented fashion. One of the most common comments we got in our prototype trials was that our website was very simple to use, and we tried to push that aspect while still having very responsive results. We faced some challenges over the course of our development, mostly involving the coding itself. For example, each time we made changes to the Javascript or HTML, it could have a huge effect on our CSS layout that we would need to react to. Additionally, it was difficult to  try and parse such large chunks of data into a recognizable format, and figuring out what the most visually appealing way to present that data would be.
-# What next steps would be if we had more time
+### What next steps would be if we had more time
 #### If we had more time, we would like to implement some of the other features we were looking at. For example, it would be fantastic if we could implement some kind of calendar or planning section, which would allow users to look at restaurant availability over different times. Additionally, we would like to add a share function, which would let people share these plans with their friends. The ultimate goal would be a fully collaborative process, where multiple people could log on, and then use our website to plan together using the calendar and search function. Additionally, we could further streamline the design of our website as we add more features, including multiple different pages, or automatically redirecting to the restaurant websites to look at menus. Finally, while our location search algorithm works, it is very basic. If we could integrate Google Maps data, we could look at real-time commutes from different locations, which would be a great leap towards our intended function.
 
 ### Links
