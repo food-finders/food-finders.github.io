@@ -261,3 +261,9 @@ p {
   height: 25px;
   width: 25px;
 }
+
+#close-button:hover {
+  border-width: 0.2px;
+  border-color: #000000;
+  border-style: solid;
+}
